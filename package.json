@@ -1,0 +1,27 @@
+{
+  "name": "graphql-prisma",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "get-schema": "graphql-codegen --config ./codegen.yml"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@graphql-cli/codegen": "^1.17.8",
+    "@graphql-codegen/schema-ast": "^1.17.8",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "graphql-cli": "^4.0.0",
+    "graphql-yoga": "^1.16.7",
+    "prisma-binding": "^2.3.16",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
+}
