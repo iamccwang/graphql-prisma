@@ -6,3 +6,4 @@ generate:
 hooks:
   post-deploy:
     - prisma generate
+secret: thisismysupersecrettext
