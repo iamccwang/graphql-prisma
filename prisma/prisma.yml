@@ -6,4 +6,4 @@ generate:
 hooks:
   post-deploy:
     - prisma generate
-secret: thisismysupersecrettext
+secret: ${env:PRISMA_SECRET}
