@@ -9,7 +9,7 @@ import { createUser,
 
 const client = getClient()
 
-beforeEach(seedDatabase, 10000)
+beforeEach(seedDatabase, 20000)
 
 test('Should create a new user', async () => {
     const variables = {
@@ -30,17 +30,17 @@ test('Should create a new user', async () => {
     })
 
     expect(exists).toBe(true)
-}, 10000)
+}, 20000)
 
 test('Should expose public author profiles', async () => {
     const response = await client.query({
         query: getUsers
     })
 
-    expect(response.data.users.length).toBe(1)
+    expect(response.data.users.length).toBe(2)
     expect(response.data.users[0].email).toBe(null)
     expect(response.data.users[0].name).toBe("Jen")
-}, 10000)
+}, 20000)
 
 test('Should not login with bad credentials', async () => {
     const variables = {
@@ -56,7 +56,7 @@ test('Should not login with bad credentials', async () => {
             variables
         })
     ).rejects.toThrow()
-}, 10000)
+}, 20000)
 
 test('Should not sign up user with invalid password', async () => {
     const variables = {
@@ -73,7 +73,7 @@ test('Should not sign up user with invalid password', async () => {
             variables
         })
     ).rejects.toThrow()
-}, 10000)
+}, 20000)
 
 test('Should fetch user profile', async () => {
     const client = getClient(userOne.jwt)
@@ -82,4 +82,4 @@ test('Should fetch user profile', async () => {
     expect(data.me.id).toBe(userOne.user.id)
     expect(data.me.name).toBe(userOne.user.name)
     expect(data.me.email).toBe(userOne.user.email)
-}, 10000)
+}, 20000)
