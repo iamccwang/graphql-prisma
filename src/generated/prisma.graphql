@@ -19,8 +19,8 @@ type Comment {
   text: String!
   author: User!
   post: Post!
-  updatedAt: DateTime
-  createdAt: DateTime
+  updatedAt: DateTime!
+  createdAt: DateTime!
 }
 
 type CommentConnection {
@@ -77,8 +77,8 @@ enum CommentOrderByInput {
 type CommentPreviousValues {
   id: ID!
   text: String!
-  updatedAt: DateTime
-  createdAt: DateTime
+  updatedAt: DateTime!
+  createdAt: DateTime!
 }
 
 input CommentScalarWhereInput {
@@ -329,8 +329,8 @@ type Post {
   published: Boolean!
   author: User!
   comments(where: CommentWhereInput, orderBy: CommentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Comment!]
-  updatedAt: DateTime
-  createdAt: DateTime
+  updatedAt: DateTime!
+  createdAt: DateTime!
 }
 
 type PostConnection {
@@ -399,8 +399,8 @@ type PostPreviousValues {
   title: String!
   body: String!
   published: Boolean!
-  updatedAt: DateTime
-  createdAt: DateTime
+  updatedAt: DateTime!
+  createdAt: DateTime!
 }
 
 input PostScalarWhereInput {
@@ -661,8 +661,8 @@ type User {
   password: String!
   posts(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Post!]
   comments(where: CommentWhereInput, orderBy: CommentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Comment!]
-  updatedAt: DateTime
-  createdAt: DateTime
+  updatedAt: DateTime!
+  createdAt: DateTime!
 }
 
 type UserConnection {
@@ -731,8 +731,8 @@ type UserPreviousValues {
   name: String!
   email: String!
   password: String!
-  updatedAt: DateTime
-  createdAt: DateTime
+  updatedAt: DateTime!
+  createdAt: DateTime!
 }
 
 type UserSubscriptionPayload {
