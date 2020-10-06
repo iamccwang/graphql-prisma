@@ -20,6 +20,13 @@
     "@graphql-cli/codegen": "^1.17.8",
     "@graphql-codegen/schema-ast": "^1.17.8",
     "apollo-boost": "^0.4.9",
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-client": "^2.6.10",
+    "apollo-link": "^1.2.14",
+    "apollo-link-error": "^1.1.13",
+    "apollo-link-http": "^1.5.17",
+    "apollo-link-ws": "^1.0.20",
+    "apollo-utilities": "^1.3.4",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
@@ -31,7 +38,8 @@
     "graphql-cli": "^4.0.0",
     "graphql-yoga": "^1.16.7",
     "jsonwebtoken": "^8.5.1",
-    "prisma-binding": "^2.3.16"
+    "prisma-binding": "^2.3.16",
+    "subscriptions-transport-ws": "^0.9.18"
   },
   "devDependencies": {
     "jest": "^23.5.0",

@@ -10,7 +10,7 @@ import { getPosts,
 
 const client = getClient()
 
-beforeEach(seedDatabase, 20000)
+beforeEach(seedDatabase, 30000)
 
 test('Should expose published posts', async () => {
     const response = await client.query({
@@ -19,14 +19,14 @@ test('Should expose published posts', async () => {
 
     expect(response.data.posts.length).toBe(1)
     expect(response.data.posts[0].published).toBe(true)
-}, 20000)
+}, 30000)
 
 test('Should fetch user posts', async () => {
     const client = getClient(userOne.jwt)
     const { data } = await client.query({ query: getMyPosts })
 
     expect(data.myPosts.length).toBe(2)
-}, 20000)
+}, 30000)
 
 test('Should be able to update own post', async () => {
     const client = getClient(userOne.jwt)
@@ -42,7 +42,7 @@ test('Should be able to update own post', async () => {
 
     expect(data.updatePost.published).toBe(false)
     expect(exists).toBe(true)
-}, 20000)
+}, 30000)
 
 test('Should create a new post', async () => {
     const client = getClient(userOne.jwt)
@@ -59,7 +59,7 @@ test('Should create a new post', async () => {
     expect(data.createPost.title).toBe("A test post")
     expect(data.createPost.body).toBe("")
     expect(data.createPost.published).toBe(true)
-}, 20000)
+}, 30000)
 
 test('Should delete post', async () => {
     const client = getClient(userOne.jwt)
@@ -71,4 +71,4 @@ test('Should delete post', async () => {
     const exists = await prisma.exists.Post({ id: postTwo.post.id })
 
     expect(exists).toBe(false)
-}, 20000)
+}, 30000)
